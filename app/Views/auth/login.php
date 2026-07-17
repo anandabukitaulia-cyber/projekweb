@@ -7,13 +7,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2563eb;
-            --primary-hover: #1d4ed8;
-            --bg-color: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: rgba(255, 255, 255, 0.1);
+            --primary: #c29b71;
+            --primary-hover: #a67c52;
+            --bg-color: #fdfbf7;
+            --card-bg: rgba(255, 255, 255, 0.75);
+            --text-main: #332f2c;
+            --text-muted: #80776c;
+            --border-color: rgba(255, 255, 255, 0.6);
         }
 
         * {
@@ -25,8 +25,8 @@
 
         body {
             background-color: var(--bg-color);
-            background-image: radial-gradient(circle at 15% 50%, rgba(37, 99, 235, 0.15), transparent 25%),
-                              radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.1), transparent 25%);
+            background-image: radial-gradient(circle at 15% 50%, rgba(212, 184, 149, 0.15), transparent 25%),
+                              radial-gradient(circle at 85% 30%, rgba(230, 213, 184, 0.2), transparent 25%);
             color: var(--text-main);
             display: flex;
             justify-content: center;
@@ -45,12 +45,12 @@
 
         .login-card {
             background: var(--card-bg);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid var(--border-color);
             border-radius: 24px;
             padding: 3rem 2.5rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 25px 50px -12px rgba(166, 124, 82, 0.1);
             animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
@@ -73,13 +73,13 @@
         .logo-icon {
             width: 56px;
             height: 56px;
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            background: linear-gradient(135deg, #d4b895, #c29b71);
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 1rem;
-            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4);
+            box-shadow: 0 10px 25px -5px rgba(194, 155, 113, 0.4);
         }
 
         .logo-icon svg {
@@ -115,9 +115,9 @@
 
         .form-input {
             width: 100%;
-            background: rgba(15, 23, 42, 0.6);
-            border: 1px solid var(--border-color);
-            color: white;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(194, 155, 113, 0.3);
+            color: var(--text-main);
             padding: 0.875rem 1rem;
             border-radius: 12px;
             font-size: 1rem;
@@ -127,12 +127,12 @@
 
         .form-input:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
-            background: rgba(15, 23, 42, 0.8);
+            box-shadow: 0 0 0 4px rgba(194, 155, 113, 0.15);
+            background: #ffffff;
         }
 
         .form-input::placeholder {
-            color: #64748b;
+            color: #b5aca1;
         }
 
         .forgot-password {
@@ -147,12 +147,12 @@
         }
 
         .forgot-password:hover {
-            color: #60a5fa;
+            color: var(--primary-hover);
         }
 
         .btn-primary {
             width: 100%;
-            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            background: linear-gradient(135deg, #d4b895, #c29b71);
             color: white;
             border: none;
             padding: 1rem;
@@ -162,13 +162,13 @@
             cursor: pointer;
             transition: all 0.3s ease;
             margin-top: 1rem;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 4px 12px rgba(194, 155, 113, 0.3);
         }
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
-            background: linear-gradient(135deg, #60a5fa, #2563eb);
+            box-shadow: 0 8px 20px rgba(194, 155, 113, 0.4);
+            background: linear-gradient(135deg, #c29b71, #a67c52);
         }
 
         .btn-primary:active {
@@ -190,7 +190,7 @@
         }
 
         .footer-text a:hover {
-            color: #60a5fa;
+            color: var(--primary-hover);
         }
 
         /* Animated background elements */
@@ -198,7 +198,7 @@
             position: absolute;
             filter: blur(80px);
             z-index: 0;
-            opacity: 0.4;
+            opacity: 0.6;
             animation: float 10s ease-in-out infinite;
         }
 
@@ -207,7 +207,7 @@
             left: -10%;
             width: 300px;
             height: 300px;
-            background: #2563eb;
+            background: #e6d5b8;
             animation-delay: 0s;
         }
 
@@ -216,7 +216,7 @@
             right: -10%;
             width: 400px;
             height: 400px;
-            background: #0ea5e9;
+            background: #efecd5;
             animation-delay: -5s;
         }
 
@@ -244,7 +244,6 @@
                 <p class="subtitle">Enter your credentials to continue</p>
             </div>
 
-            <!-- Formulir statis, tidak terhubung ke DB -->
             <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Login statis berhasil! (Tanpa koneksi database)');">
                 <div class="form-group">
                     <label class="form-label" for="email">Email Address</label>
