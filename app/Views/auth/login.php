@@ -244,16 +244,22 @@
                 <p class="subtitle">Enter your credentials to continue</p>
             </div>
 
-            <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Login statis berhasil! (Tanpa koneksi database)');">
+            <?php if(session()->getFlashdata('msg')): ?>
+                <div style="background: rgba(225, 29, 72, 0.1); border: 1px solid #e11d48; color: #e11d48; padding: 1rem; border-radius: 12px; margin-bottom: 1.5rem; text-align: center; font-size: 0.875rem;">
+                    <?= session()->getFlashdata('msg') ?>
+                </div>
+            <?php endif; ?>
+
+            <form action="<?= base_url('login') ?>" method="POST">
                 <div class="form-group">
                     <label class="form-label" for="email">Email Address</label>
-                    <input type="email" id="email" class="form-input" placeholder="name@example.com" required>
+                    <input type="email" name="email" id="email" class="form-input" placeholder="name@example.com" required>
                 </div>
 
                 <div class="form-group">
                     <label class="form-label" for="password">Password</label>
                     <a href="#" class="forgot-password">Forgot?</a>
-                    <input type="password" id="password" class="form-input" placeholder="••••••••" required>
+                    <input type="password" name="password" id="password" class="form-input" placeholder="••••••••" required>
                 </div>
 
                 <button type="submit" class="btn-primary">Sign In</button>
