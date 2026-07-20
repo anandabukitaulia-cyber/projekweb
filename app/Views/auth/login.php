@@ -24,17 +24,22 @@
         }
 
         body {
-            background-color: var(--bg-color);
-            background-image: radial-gradient(circle at 15% 50%, rgba(212, 184, 149, 0.15), transparent 25%),
-                              radial-gradient(circle at 85% 30%, rgba(230, 213, 184, 0.2), transparent 25%);
-            color: var(--text-main);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow: hidden;
-        }
+    background: linear-gradient(-45deg, #ffd6e7, #ffc2d9, #ffb3d1, #ffe5ec);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
         .login-container {
             width: 100%;
             max-width: 420px;
@@ -44,15 +49,20 @@
         }
 
         .login-card {
-            background: var(--card-bg);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--border-color);
-            border-radius: 24px;
-            padding: 3rem 2.5rem;
-            box-shadow: 0 25px 50px -12px rgba(166, 124, 82, 0.1);
-            animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
+    background: rgba(255, 240, 246, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 15px 35px rgba(255, 105, 180, 0, 25);
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
 
         @keyframes slideUp {
             from {
@@ -252,7 +262,7 @@
 
             <form action="<?= base_url('login') ?>" method="POST">
                 <div class="form-group">
-                    <label class="form-label" for="email">Email Address</label>
+                    <label class="form-label" for="email">Masukan Email</label>
                     <input type="email" name="email" id="email" class="form-input" placeholder="name@example.com" required>
                 </div>
 
